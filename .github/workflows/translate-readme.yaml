@@ -1,10 +1,10 @@
-name: Translate README to English
+
+name: Translate README on PR
 
 on:
   pull_request:
-    paths:
-      - 'README.md'
     types: [opened, synchronize]
+  workflow_dispatch:
 
 jobs:
   translate:
@@ -37,6 +37,8 @@ jobs:
           cat readme_content.txt
       # Executa o script Python para traduzir o conteúdo modificado
       - name: Run translation script
+        env:
+            OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
           languages=("en" "es" "fr" "de")
           # Loop sobre a lista e executar o script para cada item
