@@ -20,38 +20,30 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: '3.x'
+      - name: Install dependencies
+        run:
+          python3 -m pip install dotenv openai
 
-      # Extrai o diff das mudanças feitas no arquivo README.md
-      - name: Get changes from README.md
-        id: readme_diff
+      # Faz o checkout do código da branch do PR
+      - name: Checkout the repository
+        uses: actions/checkout@v3
+
+      # Lê o conteúdo do README.md da branch atual do PR
+      - name: Get content from README.md
+        id: readme_content
         run: |
-          # Faz o fetch da base do PR
-          git fetch origin ${{ github.event.pull_request.base.ref }}:base
-          # Extrai o diff apenas do arquivo README.md
-          git diff base...${{ github.event.pull_request.head.sha }} -- README.md > readme_diff.txt
-
-          # Verifica se há alterações no README.md
-          if [ -s readme_diff.txt ]; then
-            echo "README.md has been modified."
-          else:
-            echo "No changes detected in README.md"
-            exit 0
-          fi
-
+          cat README.md > readme_content.txt
+          echo "Contents of README.md:"
+          cat readme_content.txt
       # Executa o script Python para traduzir o conteúdo modificado
       - name: Run translation script
         run: |
           languages=("en" "es" "fr" "de")
-
           # Loop sobre a lista e executar o script para cada item
           for lang in "${languages[@]}"; do
             echo "Rodando script para $item"
-            python3 scripts/translate.py readme_diff.txt "${lang}"
+            python3 scripts/translate.py readme_content.txt "${lang}"
           done
-
-
-
-
       # Commit e push das alterações, apenas se o repositório permitir
       - name: Commit and push changes
         if: github.event.pull_request.head.repo.full_name == github.repository
