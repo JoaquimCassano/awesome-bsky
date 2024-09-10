@@ -3,8 +3,6 @@ name: Translate README on PR
 
 on:
   pull_request:
-    paths:
-      - 'README.md'
     types: [opened, synchronize]
 
 jobs:
