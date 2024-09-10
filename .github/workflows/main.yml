@@ -38,6 +38,8 @@ jobs:
       # Executa o script Python para traduzir o conteúdo modificado
       - name: Run translation script
         run: |
+          env:
+            OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           languages=("en" "es" "fr" "de")
           # Loop sobre a lista e executar o script para cada item
           for lang in "${languages[@]}"; do
