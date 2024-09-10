@@ -42,6 +42,7 @@ Coloque links de repositórios com features que você goste envolvendo o Bluesky
 | [Quero Assistir](https://github.com/eletroswing/queroassistir) | [Link](https://github.com/eletroswing/queroassistir) | / |[@eletroswing](https://github.com/pedrofracassi) |
 | [Vampetaço](https://bsky.app/profile/k8adev.pro) | [Link](https://github.com/k8adev/bluesky-vampetaco-bot) | Use #vampetaço | [@k8adev](https://github.com/k8adev/) |
 | [Go Vagas](https://bsky.app/profile/govagas.bsky.social) |  [Link](https://github.com/wiliamvj/go-vagas) | Repost de vagas da linguagem Go |[@wiliamvj](https://github.com/wiliamvj)|
+| [PROJETINHO MANEIRO](https://PLACEHOLDER.com) |  [Link](https://github.com/johndoe/PROJETO-TOP) | Um projeto usando api do bluesky |[@johndoe](https://github.com/johndoe)|
 
 ### 🧩 Extensões
 
