@@ -1,7 +1,7 @@
 # Index de repositórios externos do Bluesky!
 [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
 
-🌏 Português | [**English**](README.eng.md)
+🌏 Português | [**English**](README.eng.md) | [**ESPAÑOL**](README.es.md) | [**Deutsch**](README.de.md) | [**French**](README.de.md) 
 
 Coloque links de repositórios com features que você goste envolvendo o Bluesky
 
