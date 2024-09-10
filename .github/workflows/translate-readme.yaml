@@ -20,6 +20,9 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: '3.x'
+      - name: Install dependencies
+        run:
+          python3 -m pip install dotenv openai
 
       # Faz o checkout do código da branch do PR
       - name: Checkout the repository
@@ -32,21 +35,15 @@ jobs:
           cat README.md > readme_content.txt
           echo "Contents of README.md:"
           cat readme_content.txt
-
       # Executa o script Python para traduzir o conteúdo modificado
       - name: Run translation script
         run: |
           languages=("en" "es" "fr" "de")
-
           # Loop sobre a lista e executar o script para cada item
           for lang in "${languages[@]}"; do
             echo "Rodando script para $item"
             python3 scripts/translate.py readme_content.txt "${lang}"
           done
-
-
-
-
       # Commit e push das alterações, apenas se o repositório permitir
       - name: Commit and push changes
         if: github.event.pull_request.head.repo.full_name == github.repository
