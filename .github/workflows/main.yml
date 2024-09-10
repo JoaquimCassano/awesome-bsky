@@ -4,6 +4,7 @@ name: Translate README on PR
 on:
   pull_request:
     types: [opened, synchronize]
+  workflow_dispatch:
 
 jobs:
   translate:
