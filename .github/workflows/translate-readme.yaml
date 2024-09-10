@@ -22,7 +22,7 @@ jobs:
           python-version: '3.x'
       - name: Install dependencies
         run:
-          python3 -m pip install dotenv openai
+          python3 -m pip install python-dotenv openai
 
       # Faz o checkout do código da branch do PR
       - name: Checkout the repository
